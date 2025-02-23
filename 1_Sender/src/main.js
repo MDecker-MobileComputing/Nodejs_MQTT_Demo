@@ -45,7 +45,7 @@ const authObjekt = {
 };
 
 const mqttClient = await mqtt.connectAsync( mqttKonfiguration.url, authObjekt );
-console.log( `Verbindung mit MQTT-Broker ${mqttKonfiguration.url} aufgebaut: ${mqttClient}\n` );
+console.log( `Verbindung mit MQTT-Broker ${mqttKonfiguration.url} aufgebaut.\n` );
 
 mqttClient.on( "connect"  , ()       => { console.log(   "MQTT-Event 'connect'"   ); });
 mqttClient.on( "reconnect", ()       => { console.log(   "MQTT-Event 'reconnect'" ); });
