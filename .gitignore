@@ -1,0 +1,6 @@
+
+# Mit "npm install" heruntergeladene Bibliotheken
+node_modules/
+
+# Nutzername+Passwort für MQTT-Server
+mqtt-konfiguration.js
