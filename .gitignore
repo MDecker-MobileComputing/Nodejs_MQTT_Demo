@@ -3,4 +3,4 @@
 node_modules/
 
 # Nutzername+Passwort für MQTT-Server
-#mqtt-konfiguration.js
+mqtt-konfiguration.js

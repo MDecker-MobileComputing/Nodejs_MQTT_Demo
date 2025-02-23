@@ -3,7 +3,7 @@
 <br>
 
 Dieses Repo enthält eine Demo für asynchrone Kommunikation über [MQTT](https://mqtt.org/)
-mit [nodejs](https://nodejs.org/en/about).
+mit [Nodejs](https://nodejs.org/en/about).
 
 <br>
 
