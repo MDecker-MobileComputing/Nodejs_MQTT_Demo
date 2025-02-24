@@ -17,6 +17,8 @@ logger.info( `Version Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufzuba
 const mqttClient = await mqtt.connectAsync( mqttKonfiguration.url, authObjekt );
 logger.info( `Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufgebaut.` );
 
+let zaehler = 1;
+
 while ( true ) {
 
     const inland = Math.random() < 0.4;
@@ -28,9 +30,11 @@ while ( true ) {
 
     await mqttClient.publishAsync( topic, nachricht );
 
-    logger.info( `Nachricht auf Topic ${topic} gesendet: ${nachricht}` );
+    logger.info( `Nachricht #${zaehler} auf Topic ${topic} gesendet: ${nachricht}` );
 
     // Zufällige Zeitspanne zwischen 1 und 2 Sekunden
     const wartezeit = Math.floor( Math.random() * 1000 ) + 1000;
     await new Promise( (resolve) => setTimeout( resolve, wartezeit ) );
+
+    zaehler++;
 }

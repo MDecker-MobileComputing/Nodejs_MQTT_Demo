@@ -1,5 +1,13 @@
 {
+  "type": "module",
   "dependencies": {
+    "logging": "^3.3.0",
     "mqtt": "^5.10.3"
+  },
+  "scripts": {
+    "start": "node src/empfaenger.js",
+    "inland": "node src/empfaenger.js inland",
+    "ausland": "node src/empfaenger.js ausland",
+    "alle": "node src/empfaenger.js alle"
   }
 }

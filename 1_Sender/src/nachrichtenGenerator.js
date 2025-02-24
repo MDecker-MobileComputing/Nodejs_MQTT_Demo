@@ -28,16 +28,28 @@ const orteDeutschlandArray = [
 
 const orteAuslandArray = [
     "Albanien", "Amerika", "Andorra", "Argentinien", "Armenien", "Australien",
-    "Brasilien", "Belgien", "Bosnien und Herzegowina", "Bulgarien", "China",
-    "Dänemark", "Estland", "Finnland", "Frankreich", "Griechenland", "Großbritannien",
-    "Holland", "Iran", "Irak", "Irland", "Island", "Italien", "Japan", "Kanada", "Kosovo",
-    "Kolumbien", "Kroatien", "Lettland", "Liechtenstein", "Litauen", "Luxemburg",
+    "Brasilien", "Belgien", "Bosnien", "Bulgarien",
+    "China", "Chile",
+    "Dänemark",
+    "Estland", "Ecuador",
+    "Finnland", "Frankreich",
+    "Griechenland", "Großbritannien",
+    "Herzegowina", "Holland",
+    "Iran", "Irak", "Irland", "Island", "Italien",
+    "Japan", "Jamaika", "Jordanien",
+    "Kanada", "Kosovo", "Kolumbien", "Kroatien",
+    "Lettland", "Liechtenstein", "Litauen", "Luxemburg",
     "Malta", "Mazedonien", "Moldawien", "Monaco", "Montenegro",
-    "Norwegen", "Österreich", "Panama", "Peru", "Polen", "Pakistan",
-    "Portugal", "Rumänien", "Russland", "San Marino", "Schweden",
-    "der Schweiz", "Senegal", "Serbien", "Singapur", "Slowakei", "Slowenien",
-    "Spanien", "Süd-Afrika", "Taiwan", "Tunesien", "Tschechien", "der Türkei",
-    "der Ukraine", "Ungarn", "Vatikanstadt", "Weißrussland"
+    "Norwegen", "Nepal",
+    "Oman", "Österreich",
+    "Panama", "Peru", "Polen", "Pakistan", "Portugal",
+    "Rumänien", "Russland",
+    "San Marino", "Schweden", "der Schweiz", "Senegal", "Serbien", "Singapur",
+    "Slowakei", "Slowenien", "Spanien", "Süd-Afrika",
+    "Taiwan", "Tunesien", "Tschechien", "der Türkei",
+    "der Ukraine", "Ungarn",
+    "Vatikanstadt",
+    "Weißrussland"
 ];
 
 logger.info( "Anzahl Ereignisse: "       + ereignisseArray.length      );
@@ -55,8 +67,9 @@ function getZufallsElementAusArray( array ) {
 export function generiereNachricht( inland ) {
 
     const ereignis = getZufallsElementAusArray( ereignisseArray );
-    const ort      = inland ? getZufallsElementAusArray( orteDeutschlandArray ) :
-                              getZufallsElementAusArray( orteAuslandArray     );
+
+    const ort = inland ? getZufallsElementAusArray( orteDeutschlandArray ) :
+                         getZufallsElementAusArray( orteAuslandArray     );
 
     return `${ereignis} in ${ort}`;
 }
