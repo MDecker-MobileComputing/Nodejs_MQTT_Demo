@@ -1,3 +1,0 @@
-import sendeBestellung from './mqtt-sender.js';
-
-// ...use sendeBestellung function as needed...
