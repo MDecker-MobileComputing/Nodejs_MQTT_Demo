@@ -4,6 +4,7 @@
 
 Dieses Repo enthält eine Demo für asynchrone Kommunikation über [MQTT](https://mqtt.org/)
 mit [Nodejs](https://nodejs.org/en/about).
+Es werden zufällig erzeugten Nachrichtenmeldungen auf zwei Topics geschrieben.
 
 <br>
 
