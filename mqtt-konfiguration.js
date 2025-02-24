@@ -3,18 +3,18 @@
  * Topic mit JSON-Objekten für neu angelegte Kurzlinks.
  *
  * Topic-Namen fangen laut Konvention ohne "/" an, auch wenn es möglich wäre.
- * 
+ *
  * Beide Unter-Topics in MQTXX abonnieren: dozent/decker/produkt/#
  */
-const topicProdukt         = "dozent/decker/produkt";
-const topicProduktHardware = `${topicProdukt}/hardware`;
-const topicProduktSoftware = `${topicProdukt}/software`;
+const topicNachrichten        = "dozent/decker/nachrichten";
+const topicNachrichtenInland  = `${topicNachrichten}/inland`;
+const topicNachrichtenAusland = `${topicNachrichten}/ausland`;
 
 
 const mqttKonfigRemote = {
     nutzername : "bob",
     passwort   : "s3cr3t",
-    url        : "wss://mqtt.server.com"
+    url        : "wss://mqtt.ein-server.de"
 };
 
 const mqttKonfigLokal = {
@@ -27,8 +27,8 @@ const mqttKonfigLokal = {
 const mqttKonfig = mqttKonfigRemote;
 //const mqttKonfig = mqttKonfigLokal;
 
-mqttKonfig.topicProdukt         = topicProdukt;
-mqttKonfig.topicProduktHardware = topicProduktHardware;
-mqttKonfig.topicProduktSoftware = topicProduktSoftware;
+mqttKonfig.topicNachrichten        = topicNachrichten;
+mqttKonfig.topicNachrichtenInland  = topicNachrichtenInland;
+mqttKonfig.topicNachrichtenAusland = topicNachrichtenAusland;
 
 module.exports = mqttKonfig;
