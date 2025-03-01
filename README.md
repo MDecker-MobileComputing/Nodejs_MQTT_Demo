@@ -8,6 +8,12 @@ Es werden zufällig erzeugte Nachrichtenmeldungen auf zwei Topics geschrieben.
 
 <br>
 
+Siehe auch [dieses Repo](https://github.com/MDecker-MobileComputing/Nodejs_MQTT_NachrichtenLogger)
+für ein als Übung zu vervollständigendes Programm, dass die versendeten Schlagzeilen in Textdateien 
+schreibt.
+
+<br>
+
 ----
 
 ## License ##
