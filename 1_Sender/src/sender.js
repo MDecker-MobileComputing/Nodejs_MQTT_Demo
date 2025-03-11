@@ -2,7 +2,7 @@ import mqtt    from "mqtt";
 import logging from "logging";
 
 import mqttKonfiguration      from "../../mqtt-konfiguration.js";
-import { generiereNachricht } from './nachrichtenGenerator.js';
+import { generiereNachricht } from "./nachrichtenGenerator.js";
 
 const logger = logging.default( "sender" );
 
@@ -17,11 +17,12 @@ logger.info( `Version Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufzuba
 const mqttClient = await mqtt.connectAsync( mqttKonfiguration.url, authObjekt );
 logger.info( `Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufgebaut.` );
 
+
 let zaehler = 1;
 
 while ( true ) {
 
-    const inland = Math.random() < 0.4;
+    const inland = Math.random() < 0.4; // inland ist Boolean
 
     const nachricht = generiereNachricht( inland );
 
