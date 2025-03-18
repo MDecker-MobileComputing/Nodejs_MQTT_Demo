@@ -52,7 +52,7 @@ async function mqttKanalAbonnieren() {
  */
 function mqttNachrichtEmpfangen( topic, nachricht ) {
 
-    let ressortString = topic.includes( "inland" ) ? "Inland" : "Ausland";
+    const ressortString = topic.includes( "inland" ) ? "Inland" : "Ausland";
 
     console.log( `${ressortString}snachricht empfangen: ${nachricht}` );
 
