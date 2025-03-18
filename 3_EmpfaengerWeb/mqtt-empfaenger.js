@@ -2,11 +2,11 @@
 
 let divNachrichten = null;
 
-const mqttUrl        = "wss://mqtt.der-server.de";
-const mqttNutzername = "alice";
-const mqttPasswort   = "g3h3im";
 
-
+/**
+ * Event-Handler-Funktion, wird ausgeführt, wenn das HTML-Dokument
+ * vollständig geladen wurde.
+ */
 window.addEventListener( "load", async function () {
 
     divNachrichten = document.getElementById( "nachrichten" );
@@ -16,7 +16,9 @@ window.addEventListener( "load", async function () {
     console.log( "Initialisierung abgeschlossen." );
 });
 
-
+/**
+ * MQTT-Abonnement für die kanäle "dozent/decker/nachrichten/#".
+ */
 async function mqttKanalAbonnieren() {
 
     const clientId = "badnews-webclient-" + Math.random().toString( 16 ).slice( 2, 10 );
@@ -29,26 +31,34 @@ async function mqttKanalAbonnieren() {
         clean   : true
     };
 
-    const mqttClient = mqtt.connectAsync( mqttUrl, konfigObjekt );
+    const mqttClient = await mqtt.connectAsync( mqttUrl, konfigObjekt );
 
     await mqttClient.subscribeAsync( "dozent/decker/nachrichten/#" );
 
-    mqttClient.on( "connect", mqttVerbindungAufgebaut );
     mqttClient.on( "message", mqttNachrichtEmpfangen  );
     mqttClient.on( "error"  , mqttFehlerAufgetreten   );
 }
 
-function verbindungAufgebaut() {
+/**
+ * Event-Handler-Funktion für neue über MQTT empfangene Nachricht.
+ *
+ * @param {string} topic
+ *
+ * @param {string} nachricht
+ */
+function mqttNachrichtEmpfangen( topic, nachricht ) {
 
-    console.log( "Verbindung zum MQTT-Broker hergestellt." );
-}
+    let ressortString = topic.includes( "inland" ) ? "Inland" : "Ausland";
 
-function nachrichtEmpfangen( topic, nachricht ) {
+    console.log( `${ressortString}snachricht empfangen: ${nachricht}` );
 
-    console.log( "Nachricht empfangen: " + topic + " -> " + nachricht );
+    const spanRessort = document.createElement( "span" );
+    spanRessort.classList.add( "fett" );
+    spanRessort.textContent = ressortString + ": ";
 
     const divNachricht = document.createElement( "div" );
-    divNachricht.textContent = topic + " -> " + nachricht;
+    divNachricht.innerHTML = `<p>${spanRessort.outerHTML} ${nachricht}</p>`;
+
     divNachrichten.appendChild( divNachricht );
 }
 

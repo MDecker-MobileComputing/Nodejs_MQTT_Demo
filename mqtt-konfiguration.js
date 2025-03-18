@@ -4,17 +4,14 @@
  *
  * Topic-Namen fangen laut Konvention ohne "/" an, auch wenn es möglich wäre.
  *
- * Beide Unter-Topics in MQTXX abonnieren: dozent/decker/produkt/#
+ * Beide Unter-Topics in MQTXX abonnieren: dozent/decker/nachrichten/#
  */
-const topicNachrichten        = "dozent/decker/nachrichten";
-const topicNachrichtenInland  = `${topicNachrichten}/inland`;
-const topicNachrichtenAusland = `${topicNachrichten}/ausland`;
 
 
 const mqttKonfigRemote = {
-    nutzername : "bob",
-    passwort   : "s3cr3t",
-    url        : "wss://mqtt.ein-server.de"
+    nutzername : "dhbw",
+    passwort   : "dhbw",
+    url        : "wss://mqtt.zimolong.eu"
 };
 
 const mqttKonfigLokal = {
@@ -23,12 +20,22 @@ const mqttKonfigLokal = {
     url       : "mqtt://localhost:1883",
 };
 
-
 const mqttKonfig = mqttKonfigRemote;
 //const mqttKonfig = mqttKonfigLokal;
 
-mqttKonfig.topicNachrichten        = topicNachrichten;
-mqttKonfig.topicNachrichtenInland  = topicNachrichtenInland;
-mqttKonfig.topicNachrichtenAusland = topicNachrichtenAusland;
+mqttKonfig.topicNachrichten        = "dozent/decker/nachrichten";
+mqttKonfig.topicNachrichtenInland  = `${mqttKonfig.topicNachrichten}/inland`;
+mqttKonfig.topicNachrichtenAusland = `${mqttKonfig.topicNachrichten}/ausland`;
 
 module.exports = mqttKonfig;
+
+
+
+
+
+
+
+
+
+
+
