@@ -10,6 +10,25 @@
 
         <h1>MQTT-Empfänger für negative Schlagzeilen</h1>
 
+        <div id="empfangsoptionen">
+            <label>
+                <input type="radio" name="auswahl" value="inland">
+                Nur Inland
+            </label>
+            <label>
+                <input type="radio" name="auswahl" value="ausland">
+                Nur Ausland
+            </label>
+            <label>
+                <input type="radio" name="auswahl" value="beide">
+                Inland + Ausland
+            </label>
+            <label>
+                <input type="radio" name="auswahl" value="keine" checked>
+                Keine
+            </label>
+        </div>
+
         <div id="nachrichten"></div>
 
         <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script><!-- https://www.npmjs.com/package/mqtt#via-cdn -->
