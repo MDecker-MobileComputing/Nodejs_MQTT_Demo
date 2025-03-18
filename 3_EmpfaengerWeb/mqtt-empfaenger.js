@@ -1,5 +1,6 @@
 "use strict";
 
+/** <div>-Element, unter dem die <p>-Elemente */
 let divNachrichten = null;
 
 
@@ -15,6 +16,7 @@ window.addEventListener( "load", async function () {
 
     console.log( "Initialisierung abgeschlossen." );
 });
+
 
 /**
  * MQTT-Abonnement für die kanäle "dozent/decker/nachrichten/#".
@@ -39,12 +41,13 @@ async function mqttKanalAbonnieren() {
     mqttClient.on( "error"  , mqttFehlerAufgetreten   );
 }
 
+
 /**
  * Event-Handler-Funktion für neue über MQTT empfangene Nachricht.
  *
- * @param {string} topic
+ * @param {string} Topic der empfangenen Nachricht
  *
- * @param {string} nachricht
+ * @param {string} Inhalt der empfangenen Nachricht
  */
 function mqttNachrichtEmpfangen( topic, nachricht ) {
 
@@ -56,12 +59,18 @@ function mqttNachrichtEmpfangen( topic, nachricht ) {
     spanRessort.classList.add( "fett" );
     spanRessort.textContent = ressortString + ": ";
 
-    const divNachricht = document.createElement( "div" );
-    divNachricht.innerHTML = `<p>${spanRessort.outerHTML} ${nachricht}</p>`;
+    const divNachricht = document.createElement( "p" );
+    divNachricht.innerHTML = `${spanRessort.outerHTML} ${nachricht}`;
 
     divNachrichten.appendChild( divNachricht );
 }
 
+
+/**
+ * MQTT-Fehlermeldung auf der Konsole ausgeben.
+ *
+ * @param {*} Objekt mit Fehlerbeschreibung
+ */
 function mqttFehlerAufgetreten( fehler ) {
 
     console.error( "MQTT-Fehler aufgetreten: " + fehler );
