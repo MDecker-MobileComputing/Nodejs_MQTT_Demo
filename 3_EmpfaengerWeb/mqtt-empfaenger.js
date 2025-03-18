@@ -23,7 +23,8 @@ window.addEventListener( "load", async function () {
  */
 async function mqttKanalAbonnieren() {
 
-    const clientId = "badnews-webclient-" + Math.random().toString( 16 ).slice( 2, 10 );
+    const randomHex = Math.random().toString( 16 ).slice( 2, 10 );
+    const clientId = "badnews-webclient-" + randomHex; // Beispiel: badnews-webclient-8d095061
     console.log( "Client-ID: " + clientId );
 
     const konfigObjekt = {
@@ -37,8 +38,8 @@ async function mqttKanalAbonnieren() {
 
     await mqttClient.subscribeAsync( "dozent/decker/nachrichten/#" );
 
-    mqttClient.on( "message", mqttNachrichtEmpfangen  );
-    mqttClient.on( "error"  , mqttFehlerAufgetreten   );
+    mqttClient.on( "message", mqttNachrichtEmpfangen );
+    mqttClient.on( "error"  , mqttFehlerAufgetreten  );
 }
 
 
