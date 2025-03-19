@@ -4,7 +4,12 @@
 
 Dieses Repo enthält eine Demo für asynchrone Kommunikation über [MQTT](https://mqtt.org/)
 mit [Nodejs](https://nodejs.org/en/about).
-Es werden zufällig erzeugte Nachrichtenmeldungen auf zwei Topics geschrieben.
+Es werden zufällig erzeugte Schlagzeilen auf zwei Topics geschrieben.
+
+<br>
+
+Im Ordner [3_EmpfaengerWeb](3_EmpfaengerWeb/) ist auch eine Webseite enthalten, die über
+MQTT die Schlagzeilen empfängt.
 
 <br>
 
