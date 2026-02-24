@@ -9,9 +9,9 @@
 
 
 const mqttKonfigRemote = {
-    nutzername : "dhbw",
-    passwort   : "dhbw",
-    url        : "wss://mqtt.zimolong.eu"
+    nutzername : "",
+    passwort   : "",
+    url        : "wss://mqtt...."
 };
 
 const mqttKonfigLokal = {
