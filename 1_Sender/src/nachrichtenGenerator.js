@@ -1,9 +1,9 @@
-import logging from "logging";
+import createLogger from "logging";
 
 // für Java-Variante dieser Datei siehe:
 // https://github.com/MDecker-MobileComputing/Maven_SpringBoot_WebSockets/blob/master/src/main/java/de/eldecker/dhbw/spring/websockets/logik/SchlagzeilenErzeuger.java
 
-const logger = logging.default( "nachrichten" );
+const logger = createLogger( "empfaenger" );
 
 const ereignisseArray = [
     "Altersarmut", "Amoklauf", "Ausgangs-Sperre", "Ärztemangel", "Ausschreitungen",

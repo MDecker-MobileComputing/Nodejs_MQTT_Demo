@@ -1,10 +1,10 @@
-import mqtt    from "mqtt";
-import logging from "logging";
+import mqtt         from "mqtt";
+import createLogger from "logging";
 
 import mqttKonfiguration      from "../../mqtt-konfiguration.js";
 import { generiereNachricht } from "./nachrichtenGenerator.js";
 
-const logger = logging.default( "sender" );
+const logger = createLogger( "sender" );
 
 
 const authObjekt = {

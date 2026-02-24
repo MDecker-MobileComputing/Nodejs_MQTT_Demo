@@ -1,10 +1,10 @@
-import mqtt    from "mqtt";
-import logging from "logging";
+import mqtt         from "mqtt";
+import createLogger from "logging";
 
 import mqttKonfiguration from "../../mqtt-konfiguration.js";
 
 
-const logger = logging.default( "empfaenger" );
+const logger = createLogger( "empfaenger" );
 
 if ( process.argv.length < 3 ) {
 
