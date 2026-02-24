@@ -5,9 +5,9 @@
     "mqtt": "^5.10.3"
   },
   "scripts": {
-    "start": "node src/empfaenger.js",
+    "start": "node src/empfaenger.js alle",
+    "alle": "node src/empfaenger.js alle",
     "inland": "node src/empfaenger.js inland",
-    "ausland": "node src/empfaenger.js ausland",
-    "alle": "node src/empfaenger.js alle"
+    "ausland": "node src/empfaenger.js ausland"
   }
 }
