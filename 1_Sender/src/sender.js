@@ -13,7 +13,7 @@ const authObjekt = {
     password: mqttKonfiguration.passwort
 }
 
-logger.info( `Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufzubauen ...` );
+logger.info( `Versuche Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufzubauen ...` );
 const mqttClient = await mqtt.connectAsync( mqttKonfiguration.url, authObjekt );
 logger.info( `Verbindung zu MQTT-Broker ${mqttKonfiguration.url} aufgebaut.` );
 
