@@ -17,7 +17,7 @@ const mqttKonfigRemote = {
 const mqttKonfigLokal = {
     nutzername: "alice",
     passwort  : "g3h3im",
-    url       : "mqtt://localhost:1883",
+    url       : "ws://localhost:8083/mqtt",
 };
 
 const mqttKonfig = mqttKonfigRemote;
