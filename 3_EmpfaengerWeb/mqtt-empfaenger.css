@@ -6,3 +6,10 @@ body {
 .fett {
     font-weight: bold;
 }
+
+#empfangsoptionen label {
+  margin-right: 1rem;   /* Abstand nach rechts */
+  display: inline-flex; /* optional, wenn vertikale Ausrichtung nötig */
+  align-items: center;
+  margin-bottom: 2rem; /* Abstand nach unten */
+}
